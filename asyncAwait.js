@@ -243,3 +243,22 @@ Promise.allSettled([
 ]).then(result=>console.log(result));
 
 
+11. invitation
+
+async function invite(){
+    const result1 = await addName()
+    const result2 = await addDate()
+    setTimeout(()=> {
+        console.log(` Dear ${result1}! 
+         You are invited to visit the Museum! Join us on ${result2}`);
+    }, 2000)
+}
+function addName(name){
+return `Armen`
+}
+function addDate(date){
+return `17.10.2023`
+}
+
+// invite();
+
