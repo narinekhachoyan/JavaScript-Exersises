@@ -1,15 +1,19 @@
 
 function fact(n) {
     
+    if(n === 0 || n === 1) return 1
+
     let factor = 1;
     for (i = 1; i <= n; i++) {
         factor *= i;
-    } return factor;
+    } 
+
+    return factor;
 }
 
-console.log(fact(4));
+console.log(fact(1));
 
-console.log(fact(7));
 
-console.log(fact(5));
+
+
 
