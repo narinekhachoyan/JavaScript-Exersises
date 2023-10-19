@@ -243,7 +243,7 @@ Promise.allSettled([
 ]).then(result=>console.log(result));
 
 
-11. invitation
+// 11. invitation
 
 async function invite(){
     const result1 = await addName()
