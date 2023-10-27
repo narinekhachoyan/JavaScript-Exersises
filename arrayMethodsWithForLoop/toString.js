@@ -1,8 +1,6 @@
 function stringify(arr) {
     let str = '';
     for (let elem of arr) {
-       // elem = String(elem);
-       console.log(typeof elem);
         str += elem + ',';
     } return str;
 }
