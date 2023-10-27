@@ -5,7 +5,7 @@ function reverse(arr) {
     } 
     arr.length = 0;
     arr.push(...temp);
-    return temp;
+    return arr;
 }
 
 const array = [1,2,3,4,5,6];
