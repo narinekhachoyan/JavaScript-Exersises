@@ -12,11 +12,11 @@ function sortAscending(arr) {
     } return tempAr;
 }
 
-const array = [5,7,4,1];
-const string = ['cat','axe','book'];
+const array = [5, 7, 4, 1];
+const string = ['cat', 'axe', 'book','dog'];
 
-// console.log(sortAscending(array));
-// console.log(sortAscending(string));
+//console.log(sortAscending(array));
+console.log(sortAscending(string));
 
 function sortDescending(arr) {
     let tempAr = [];

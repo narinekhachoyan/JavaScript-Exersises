@@ -19,7 +19,10 @@ function join(arr, str) {
         } 
     } return temporary;
 }
+
 const joined = join(['a','v', 'p'],'');
+
 // console.log(joined);
 
 // console.log(['a', 'v','b'].join(''));
+
