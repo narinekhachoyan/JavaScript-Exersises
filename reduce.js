@@ -1,3 +1,62 @@
+// 1. Group people by age
+const people = [
+    { name: "Alice", age: 25 },
+    { name: "Bob", age: 30 },
+    { name: "Charlie", age: 25 },
+    { name: "David", age: 30 }
+];
+
+function grouping(obj, prop) {
+    return obj.reduce(function (acc, cur) {
+        let key = cur[prop];
+        if (!acc[key]) {
+            acc[key] = [];
+        }
+        acc[key].push(cur);
+        return acc;
+    }, {});
+}
+
+let grouped = grouping(people, "age");
+// console.log(grouped);
+
+
+
+//   2 . Given an array of words, group them by their 
+// length and count how many words have each length.
+
+const words = ["apple", "banana", "cat", "dog", "elephant", "fox"];
+
+const countLength =
+    words.reduce((acc, cur) => {
+        let key = cur.length;
+        if (!acc[key]) {
+            acc[key] = 0;
+        }
+        acc[key]++;
+        return acc;
+    }, {});
+
+console.log(countLength);
+
+
+// 3. You are given a two-digit integer n. Return the sum of its digits.
+
+function sumOfDigits(num) {
+    let str = String(num);
+    let sum = str.split('').reduce((acc, cur) =>
+        acc + Number(cur), 0)
+    return sum;
+}
+// console.log(sumOfDigits(19));
+
+
+
+
+
+
+
+
 //Given array of numbers , find max number in array and print it
 
 const numbers = [5, 89, 46, 21, 560, 1045];
