@@ -27,8 +27,8 @@ let grouped = grouping(people, "age");
 
 const words = ["apple", "banana", "cat", "dog", "elephant", "fox"];
 
-const countLength =
-    words.reduce((acc, cur) => {
+function countLength (arr){
+    return words.reduce((acc, cur) => {
         let key = cur.length;
         if (!acc[key]) {
             acc[key] = 0;
@@ -36,8 +36,9 @@ const countLength =
         acc[key]++;
         return acc;
     }, {});
+}
 
-console.log(countLength);
+console.log(countLength(words));
 
 
 // 3. You are given a two-digit integer n. Return the sum of its digits.
