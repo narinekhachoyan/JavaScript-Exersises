@@ -115,14 +115,56 @@ const obj = [
 function calculateYearlySalary(obj){
     return obj.salary*12;
 }
+
 obj.forEach(function(obj){
     obj.yearlySalary = calculateYearlySalary(obj)
 })
 // console.log(obj);
+
  
 
+// Create 2 objects customers and teachers. Write function that will count yearly salary of customers and teachers.
 
+const customers1 = {
+    1: { name: "Meri", salary: 15, age: 24 },
+    2: { name: "Kevin", salary: 100, age: 16 },
+    3: { name: "Annie", salary: 30, age: 30 },
+  };
+  
+  const teachers1 = {
+    1: { name: "Joe", salary: 5, age: 50 },
+    2: { name: "Rosie", salary: 4, age: 30 },
+    3: { name: "Ruby", salary: 3, age: 62 },
+  };
+  
+  function countYearlySalary() {
+    let sal = 0;
+  
+    for (const key in this) {
+      sal += this[key].salary * 12;
+    }
+  
+    return sal;
+  }
+  
+  const customersSalary = countYearlySalary.call(customers1);
+  const teachersSalary = countYearlySalary.call(teachers1);
+  
+//   console.log(
+//     `Customers' salary is ${customersSalary}, Teachers' salary is ${teachersSalary}`
+//   );
 
+function func(arr) {
+    let maxProd = 0;
 
+    for (let i = 0; i < arr.length - 1; i++) {
+        const prod = arr[i] * arr[i + 1];
+        if (prod > maxProd) {
+            maxProd = prod
+        }
+    } return maxProd;
+}
+const arr = [3,7,-1,-5,6];
+console.log(func([1,6,3,9]));
 
 

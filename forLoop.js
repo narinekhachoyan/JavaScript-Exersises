@@ -395,7 +395,7 @@ function join(arr, str) {
 
 }
 const joined = join(ar, ' + ');
-// console.log(joined);
+console.log(joined);
 
 // 38. find with for loop
 
