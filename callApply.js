@@ -155,8 +155,7 @@ const customers1 = {
 //   );
 
 function func(arr) {
-    let maxProd = 0;
-
+    let maxProd = -Infinity;
     for (let i = 0; i < arr.length - 1; i++) {
         const prod = arr[i] * arr[i + 1];
         if (prod > maxProd) {
@@ -165,6 +164,6 @@ function func(arr) {
     } return maxProd;
 }
 const arr = [3,7,-1,-5,6];
-console.log(func([1,6,3,9]));
+console.log(func([-23, 4, -3, 8, -12]));
 
 

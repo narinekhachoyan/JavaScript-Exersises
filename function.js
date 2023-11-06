@@ -51,7 +51,7 @@ return century;
 
 // 4. Given an array of integers, find the pair of adjacent elements that has the largest product and return that product.
 function func(arr) {
-    let maxProd = 0;
+    let maxProd = -Infinity;
 
     for (let i = 0; i < arr.length - 1; i++) {
         const prod = arr[i] * arr[i + 1];
