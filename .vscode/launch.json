@@ -11,7 +11,7 @@
             "skipFiles": [
                 "<node_internals>/**"
             ],
-            "program": "${workspaceFolder}/splice.js"
+            "program": "${workspaceFolder}/matrixEx.js"
         },
         {
             "type": "node",
