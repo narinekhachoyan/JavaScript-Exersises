@@ -114,7 +114,7 @@ function getDaysAndHours(month, year) {
     });
     return `File is created`
 }
-console.log(getDaysAndHours(11,2023));
+// console.log(getDaysAndHours(11,2023));
 
 const date1 = new Date('2023-11-2 00:00:00');
 const date2 = new Date('2023-11-3 00:00:00');
@@ -159,7 +159,43 @@ const endDate = new Date(2023, 11, 3);
 // console.log(logDates(startDate, endDate, 1));
 
 
-let startPoint = new Date(start.getFullYear(), start.getMonth(), start.getDate()+1, 0, 0, 0);
-let endPoint = new Date(end.getFullYear(), end.getMonth(), end.getDate()+1, 0, 0, 0);
+// let startPoint = new Date(start.getFullYear(), start.getMonth(), start.getDate()+1, 0, 0, 0);
+// let endPoint = new Date(end.getFullYear(), end.getMonth(), end.getDate()+1, 0, 0, 0);
 // console.log(startPoint);
 // console.log(endPoint);
+
+
+function tryDate(date1, date2){
+    let result = '';
+    let startPoint = new Date(date1.getFullYear(), date1.getMonth(), date1.getDate()+1, 0, 0, 0);
+    let endPoint = new Date(date2.getFullYear(), date2.getMonth(), date2.getDate()+1, 0, 0, 0);
+    try {
+        while(startPoint <= endPoint){
+            result += startPoint.toString();
+        }
+        if(startPoint.toString() === 'Invalid Date'){
+            throw new Error(`Date is invalid`)
+        }
+    } catch (error) {
+        return error.message
+    }
+    return result;
+}
+// console.log(tryDate(startDate, endDate));
+
+const dat = new Date();
+dat.setUTCHours(0,0,0);
+// console.log(dat);
+
+const theBigDay = new Date();
+theBigDay.setHours(0);
+// console.log(theBigDay);
+
+const or = Date();
+// console.log(or);
+
+const or1 = new Date(2021,4,5);
+console.log(or1.getDate()); 
+console.log(or1);  
+
+

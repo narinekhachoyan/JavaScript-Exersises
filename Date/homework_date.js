@@ -9,7 +9,7 @@ function getHoursWithDate(start, end) {
     let content = '';
 
     while (startPoint <= endPoint) {
-        content += `year=${String(startPoint.getFullYear())}, month=${String(startPoint.getMonth())}, day=${String(startPoint.getDate() + 1)}, hour=${String(startPoint.getHours())}\n`;
+        content += `year=${startPoint.getFullYear().toString()}, month=${startPoint.getMonth().toString()}, day=${(startPoint.getDate() + 1).toString()}, hour=${startPoint.getHours().toString()}\n`;
     }
    
 
@@ -24,7 +24,7 @@ function getHoursWithDate(start, end) {
 const start = new Date('2023-11-1');
 const end = new Date('2023-11-30');
 
-// console.log(getHoursWithDate(start, end));
+console.log(getHoursWithDate(start, end));
 
 function getHoursWithMoment(start, end) {
     let curDate = moment(start).startOf('hour')
