@@ -1,23 +1,42 @@
-// Return all values and instead of Datestmp return Date 
-// (you can convert datestmp to regular data in moment (format yyyy-dd-mm))
+//  Պետք է վերադարձնել այն Դոմեյնները որոնք երեք ժամ անընդմեջ ունեն >=1000 pubimps:
+// Վերադարձվող տվյալներում պետք է Ժամը լինի YYYY-dd-mm ֆորմատով
+
 
 const moment = require('moment');
-const data = require('./data.json');
 const fs = require('fs');
+const lodash = require('lodash');
+const domains = require('./data.json');
 
-const newData =[];
-data.forEach(obj => {
-    const timestamp = obj.DateStamp*100;
+const domainsList = lodash.orderBy(domains, 'DateStamp');
+
+function groupAndFormat() {
+  let count = 0
+  const result = []
+
+  domainsList.forEach((elem) => {
+    if (elem.PubImps >= 1000) {
+      count++
+    } else {
+      count = 0
+    }
+
+    if (count >= 3) {
+      result.push(elem)
+    }
+
+  })
+  const newData = [];
+  result.forEach(obj => {
+    const timestamp = obj.DateStamp * 100;
     const formatted = moment.unix(timestamp).format('YYYY-DD-MM');
     obj.DateStamp = formatted;
     newData.push(obj)
-})
+  })
 
-const finalData = newData.map(obj => JSON.stringify(obj)).join('\n');
-try {
-    fs.writeFileSync('./newData.json', finalData, null,2, 'utf-8')
-    console.log('Data successfully saved to disk');
-  } catch (err) {
-    console.error(err)
-  }
-  
+  fs.writeFileSync("highPubImps.json", JSON.stringify(newData, null, 2))
+  return `Data with PubImps more than 1000 is ready`
+}
+
+console.log(groupAndFormat());
+
+

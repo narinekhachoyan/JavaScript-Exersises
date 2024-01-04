@@ -13,7 +13,7 @@ const person = {
        city: "New York"
 };
 
-const {name, age, city} = person;
+const {firstName, age, city} = person;
 
 // console.log(firstName);
 // console.log(age);
