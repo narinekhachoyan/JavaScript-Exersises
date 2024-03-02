@@ -34,7 +34,7 @@ function groupAndFormat() {
   })
 
   fs.writeFileSync("highPubImps.json", JSON.stringify(newData, null, 2))
-  return `Data with PubImps more than 1000 is ready`
+  return newData
 }
 
 console.log(groupAndFormat());
